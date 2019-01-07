@@ -24,3 +24,9 @@ Then run the container and make sure you don't map over the /root directory beca
 .. code-block:: bash
 
   $ docker run -it --rm --mount type=bind,source=$PWD,target=/root/project alexisbellido/znbstatic-20190107:latest docker-entrypoint.sh /bin/bash
+  
+
+Additional Resources
+------------------------------------------------------------------------------
+
+`pip install <https://pip.pypa.io/en/stable/reference/pip_install>`_ documentation.
