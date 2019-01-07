@@ -23,6 +23,11 @@ RUN mkdir -p /root/.ssh/ \
 
 COPY requirements.txt /root/requirements.txt
 
+RUN python -m venv /env \
+  && . /env/bin/activate \
+  && pip install --upgrade pip \
+  && pip install --no-cache-dir -r requirements.txt
+
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 SHELL ["/bin/bash", "-c"]
