@@ -52,6 +52,18 @@ Installing from git using https.
   $ pip install git+https://github.com/requests/requests.git#egg=requests
   $ pip install git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
 
+This package could be added to a pip requirements from its git repository.
+
+.. code-block:: bash
+
+  git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
+
+or from PyPi, in this case passing a specific version.
+
+.. code-block:: bash
+
+  znbstatic==0.2
+
 
 Distribute as a setuptools-based Package
 ------------------------------------------------------------------------------
@@ -77,7 +89,7 @@ The package is now available at `<https://test.pypi.org/project/znbstatic/>`_ an
 
 .. code-block:: bash
 
-  $ pip install -i https://test.pypi.org/simple/ znbstati
+  $ pip install -i https://test.pypi.org/simple/ znbstatic
 
 Upload to the real PyPi at `<https://pypi.org>`_.
 
