@@ -27,16 +27,43 @@ Then run the container and make sure you don't map over the /root directory beca
   $ docker run -it --rm --mount type=bind,source=$PWD,target=/root/project alexisbellido/znbstatic-20190107:latest docker-entrypoint.sh /bin/bash
   
 
-Additional Resources
+Installing and Uninstalling Packages
 ------------------------------------------------------------------------------
 
-Installing in editable mode from local directory:
+Installing in editable mode from local directory.
 
-pip install -e /path/to/requests/
+.. code-block:: bash
 
-Installing from git:
+  $ pip install -e /path/to/znbstatic/
 
-pip install git+https://github.com/requests/requests.git#egg=requests
+You can remove the -e to install the package in the corresponding Python path, for example: /env/lib/python3.7/site-packages/znbstatic.
+
+List installed packages and uninstall.
+
+.. code-block:: bash
+
+  $ pip list
+  $ pip uninstall znbstatic
+
+Installing from git using https.
+
+.. code-block:: bash
+
+  $ pip install git+https://github.com/requests/requests.git#egg=requests
+  $ pip install git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
+
+
+Distribute as a setuptools-based Package
+------------------------------------------------------------------------------
+
+.. code-block:: bash
+
+  $ pip install setuptools wheel
+  $ pip install twine
+
+
+Additional Resources
+------------------------------------------------------------------------------
 
 `pip install <https://pip.pypa.io/en/stable/reference/pip_install>`_ documentation.
 

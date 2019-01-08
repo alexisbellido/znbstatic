@@ -19,17 +19,6 @@ and then use that environment variable to build with Dockerfile-2 without --buil
 .. code-block:: bash
 
   $ docker build -t alexisbellido/znbstatic-2 -f ./Dockerfile-2 .
----
-
-these working
-
-39  pip install -e /root/project
-40  pip list
-41  pip uninstall znbstatic
-
-try remove znbstatic
-
----
 
 copy documentation to add to Django settings
 
