@@ -56,16 +56,47 @@ Installing from git using https.
 Distribute as a setuptools-based Package
 ------------------------------------------------------------------------------
 
+This can be run from a host or a container. My tests have been on a container.
+
 .. code-block:: bash
 
   $ pip install setuptools wheel
   $ pip install twine
 
+Run this from the same directory where setup.py is located.
+
+.. code-block:: bash
+
+  $ python setup.py sdist bdist_wheel
+
+Upload to Test PyPi at `<https://test.pypi.org>`_.
+
+  $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+The package is now available at `<https://test.pypi.org/project/znbstatic/>`_ and can be installed with pip.
+
+.. code-block:: bash
+
+  $ pip install -i https://test.pypi.org/simple/ znbstati
+
+Upload to the real PyPi at `<https://pypi.org>`_.
+
+.. code-block:: bash
+
+  $ twine upload dist/*
+
+The package is now available at `<https://pypi.org/project/znbstatic/>`_ and can be installed with pip.
+
+.. code-block:: bash
+
+  $ pip install znbstatic
 
 Additional Resources
 ------------------------------------------------------------------------------
 
-`pip install <https://pip.pypa.io/en/stable/reference/pip_install>`_ documentation.
+  * `packaging projects <https://packaging.python.org/tutorials/packaging-projects>`_.
+  * `setuptools <https://setuptools.readthedocs.io/en/latest/setuptools.html>`_.
+  * `pip install <https://pip.pypa.io/en/stable/reference/pip_install>`_ documentation.
 
 Amazon S3
 -----------------------------------------------
