@@ -47,6 +47,7 @@ or from PyPi, in this case passing a specific version.
 
   znbstatic==0.2
 
+Znbstatic will require, and install if necessary, Django, boto3 and django-storages.
 
 Updating Django Settings
 ---------------------------------------------------------------------------------------
