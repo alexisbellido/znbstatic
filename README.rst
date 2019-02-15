@@ -34,11 +34,12 @@ Installing from git using https.
   $ pip install git+https://github.com/requests/requests.git#egg=requests
   $ pip install git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
 
-This package could be added to a pip requirements from its git repository.
+This package could be added to a pip requirements.txt file from its git repository or source directory.
 
 .. code-block:: bash
 
   git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
+  -e /path-to/znbstatic/
 
 or from PyPi, in this case passing a specific version.
 

@@ -17,6 +17,11 @@ Then run the container and make sure you don't map over the /root directory beca
 
   $ docker run -it --rm --mount type=bind,source=$PWD,target=/root/project alexisbellido/znbstatic-20190107:latest docker-entrypoint.sh /bin/bash
 
+Configuration and Django settings.py
+------------------------------------------------------------------------------
+
+Review partial settings files production.py and locals3.py in docs directory.
+
 Distribute as a setuptools-based Package
 ------------------------------------------------------------------------------
 
