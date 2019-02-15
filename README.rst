@@ -79,7 +79,10 @@ AWS_ACCESS_KEY_ID = 'your-access-key-id'
 AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
 
 AWS_STORAGE_STATIC_BUCKET_NAME = 'static.example.com'
+
+# where is this used?
 AWS_S3_HOST = 's3.amazonaws.com'
+
 S3_USE_SIGV4 = True
 AWS_QUERYSTRING_AUTH = False
 AWS_DEFAULT_ACL = 'public-read'
