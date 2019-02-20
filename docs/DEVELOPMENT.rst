@@ -11,7 +11,7 @@ Change to the directory where the Dockerfile is and build the image from there. 
 
   $ docker build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" -t alexisbellido/znbstatic-$(date +%Y%m%d) .
 
-Then run the container and make sure you don't map over the /root directory because that's where ssh key from the host is stored if you use a temporary container. 
+Then run the container and make sure you don't map over the /root directory because that's where ssh key from the host is stored if you use a temporary container.
 
 .. code-block:: bash
 
@@ -64,5 +64,7 @@ Additional Resources
 ------------------------------------------------------------------------------
 
   * `packaging projects <https://packaging.python.org/tutorials/packaging-projects>`_.
+  * `sample project on GitHub <https://github.com/pypa/sampleproject>`_.
   * `setuptools <https://setuptools.readthedocs.io/en/latest/setuptools.html>`_.
   * `pip install <https://pip.pypa.io/en/stable/reference/pip_install>`_ documentation.
+  * `include additional files with distribution <https://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files>`_.
