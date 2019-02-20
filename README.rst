@@ -124,6 +124,16 @@ Assign it the following CORS configuration in the permissions tab.
   </CORSRule>
   </CORSConfiguration>
 
+Go to permissions, public access settings for the bucket and set these options to false or you won't be able to use * as Principal in the bucket policy:
+
+.. code-block:: bash
+
+ Block new public ACLs and uploading public objects (Recommended)
+ Remove public access granted through public ACLs (Recommended)
+ Block new public bucket policies (Recommended)
+ Block public and cross-account access if bucket has public policies (Recommended)
+
+
 and the following bucket policy (use the corresponding arn for the bucket and for the IAM user that will have full control).
 
 .. code-block:: bash
@@ -153,7 +163,7 @@ and the following bucket policy (use the corresponding arn for the bucket and fo
           }
       ]
   }
-  
+
 
 Option 2: user policy.
 
