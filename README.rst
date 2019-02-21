@@ -114,14 +114,13 @@ Assign it the following CORS configuration in the permissions tab.
 
 .. code-block:: bash
 
-  <?xml version="1.0" encoding="UTF-8"?>
   <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-  <CORSRule>
-      <AllowedOrigin>*</AllowedOrigin>
-      <AllowedMethod>GET</AllowedMethod>
-      <MaxAgeSeconds>3000</MaxAgeSeconds>
-      <AllowedHeader>Authorization</AllowedHeader>
-  </CORSRule>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+    </CORSRule>
   </CORSConfiguration>
 
 Go to permissions, public access settings for the bucket and set these options to false or you won't be able to use * as Principal in the bucket policy:
