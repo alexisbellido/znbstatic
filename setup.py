@@ -57,6 +57,7 @@ setup(
         'Programming Language :: Python :: 3.7',
     ],
     packages=find_packages(),
+    package_dir={'znbstatic': 'znbstatic'},
+    package_data={'': ['README.rst', 'LICENSE']},
     include_package_data=True
 )
-

@@ -34,11 +34,12 @@ Installing from git using https.
   $ pip install git+https://github.com/requests/requests.git#egg=requests
   $ pip install git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
 
-This package could be added to a pip requirements from its git repository.
+This package could be added to a pip requirements.txt file from its git repository or source directory.
 
 .. code-block:: bash
 
   git+https://github.com/alexisbellido/znbstatic.git#egg=znbstatic
+  -e /path-to/znbstatic/
 
 or from PyPi, in this case passing a specific version.
 
@@ -46,6 +47,7 @@ or from PyPi, in this case passing a specific version.
 
   znbstatic==0.2
 
+Znbstatic will require, and install if necessary, Django, boto3 and django-storages.
 
 Updating Django Settings
 ---------------------------------------------------------------------------------------
@@ -78,7 +80,10 @@ AWS_ACCESS_KEY_ID = 'your-access-key-id'
 AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
 
 AWS_STORAGE_STATIC_BUCKET_NAME = 'static.example.com'
+
+# where is this used?
 AWS_S3_HOST = 's3.amazonaws.com'
+
 S3_USE_SIGV4 = True
 AWS_QUERYSTRING_AUTH = False
 AWS_DEFAULT_ACL = 'public-read'
@@ -109,15 +114,24 @@ Assign it the following CORS configuration in the permissions tab.
 
 .. code-block:: bash
 
-  <?xml version="1.0" encoding="UTF-8"?>
   <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-  <CORSRule>
-      <AllowedOrigin>*</AllowedOrigin>
-      <AllowedMethod>GET</AllowedMethod>
-      <MaxAgeSeconds>3000</MaxAgeSeconds>
-      <AllowedHeader>Authorization</AllowedHeader>
-  </CORSRule>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+    </CORSRule>
   </CORSConfiguration>
+
+Go to permissions, public access settings for the bucket and set these options to false or you won't be able to use * as Principal in the bucket policy:
+
+.. code-block:: bash
+
+ Block new public ACLs and uploading public objects (Recommended)
+ Remove public access granted through public ACLs (Recommended)
+ Block new public bucket policies (Recommended)
+ Block public and cross-account access if bucket has public policies (Recommended)
+
 
 and the following bucket policy (use the corresponding arn for the bucket and for the IAM user that will have full control).
 
@@ -148,7 +162,7 @@ and the following bucket policy (use the corresponding arn for the bucket and fo
           }
       ]
   }
-  
+
 
 Option 2: user policy.
 
