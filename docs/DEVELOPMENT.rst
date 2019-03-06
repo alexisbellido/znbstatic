@@ -5,17 +5,23 @@ Development Notes
 
 Using a temporary, local Docker container with an ssh private key and some Python 3 packages for initial tests.
 
-Change to the root directory of this repository, where the Dockerfile and setup.py files are, and build the image. Optional: Use $(date) to use today's date as part of the image's name.
+Change to the root directory of this repository, where the Dockerfile and setup.py files are, and build the image.
 
 .. code-block:: bash
 
-  $ docker build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" -t example/znbstatic-$(date +%Y%m%d) .
+  $ docker build -t znbstatic .
 
-While still in the same directory, run the container and make sure you don't map over /root in the container because that's where ssh key from the host is stored.
+Optional: Use a username (example here), a version number and $(date) to tag the image.
 
 .. code-block:: bash
 
-  $ docker run -it --rm --mount type=bind,source=$PWD,target=/root/project example/znbstatic-20190107:latest docker-entrypoint.sh /bin/bash
+  $ docker build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" -t example/znbstatic:0.1-$(date +%Y%m%d) .
+
+While still in the same directory, run the container and make sure you don't map over /root in the container because that's where ssh key from the host is stored. Replace image:tag with what you used above, for example, znbstatic:latest or example/znbstatic:0.1-20190306.
+
+.. code-block:: bash
+
+  $ docker run -it --rm --mount type=bind,source=$PWD,target=/root/project image:tag docker-entrypoint.sh /bin/bash
 
 This will map /root/project inside the container to the host directory where setup.py is, the root of the repository, and set the Python environment so that pip can do its job.
 
