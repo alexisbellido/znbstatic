@@ -52,7 +52,7 @@ To uninstall the package.
 Configuration and Django settings.py
 ------------------------------------------------------------------------------
 
-Review partial settings files production.py and locals3.py in docs directory.
+Review partial-settings.py in the docs directory.
 
 Distribute as a setuptools-based Package
 ------------------------------------------------------------------------------
