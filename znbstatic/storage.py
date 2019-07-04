@@ -6,7 +6,6 @@ from storages.backends.s3boto3 import S3Boto3Storage
 from znbstatic.utils import add_version_to_url
 
 
-@deconstructible
 class VersionedStaticFilesStorage(StaticFilesStorage):
     """
     A static file system storage backend that appends
@@ -21,7 +20,6 @@ class VersionedStaticFilesStorage(StaticFilesStorage):
         return add_version_to_url(url, version)
 
 
-@deconstructible
 class VersionedS3StaticFilesStorage(S3Boto3Storage):
     """
     A static file system storage backend that stores files on Amazon S3 and
