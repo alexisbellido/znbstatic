@@ -1,13 +1,4 @@
-from django.utils.six.moves.urllib.parse import (urlparse, parse_qsl, urlunparse, urlencode)
-
-# Using six module to simplify the longer alternative.
-# try:
-#     # Python 2
-#     from urlparse import (urlparse, parse_qsl, urlunparse)
-#     from urllib import urlencode
-# except ImportError:
-#     # Python3
-#     from urllib.parse import (urlparse, parse_qsl, urlunparse, urlencode)
+from urllib.parse import (urlparse, parse_qsl, urlunparse, urlencode)
 
 
 def add_version_to_url(url, version):
