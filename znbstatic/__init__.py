@@ -2,7 +2,7 @@
 ZnbStatic, a Django storage backend.
 """
 
-__version__ = '0.5'
+__version__ = '0.6'
 
 # Should we get crazy with version?
 # VERSION = (0, 0, 3, 'alpha', 0)
